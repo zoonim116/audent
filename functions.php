@@ -1,6 +1,7 @@
 <?php
-
-require_once get_template_directory() . '/helpers/settings_fields.php';
+require_once  get_template_directory() . '/helpers/helper.php';
+require_once  get_template_directory() . '/cpt/services.php';
+require_once ABSPATH  . 'wp-content/plugins/favpress/favpress-framework/bootstrap.php';
 
 /************************ Setup theme **********************************************/
 add_action( 'after_setup_theme', 'my_theme_setup' );
@@ -39,9 +40,33 @@ add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 function register_menus() {
     register_nav_menus(
         array(
-            'header-menu' => __( 'Хидер меню' ),
-            'footer-menu' => __( 'Футер меню' ),
+            'header-menu' => __( 'Хидер меню', 'audent' ),
+            'footer-menu' => __( 'Футер меню', 'audent' ),
         )
     );
 }
 add_action( 'init', 'register_menus' );
+
+$options = include  get_template_directory() .'/helpers/options.php';
+
+$theme_options = new FavPress_Option (array(
+    'is_dev_mode'           => false,                                  // dev mode, default to false
+    'option_key'            => 'audent_option',                           // options key in db, required
+    'page_slug'             => 'audent_option',                           // options page slug, required
+    'template'              => $options,                              // template file path or array, required
+    'menu_page'             => 'themes.php',                           // parent menu slug or supply `array` (can contains 'icon_url' & 'position') for top level menu
+    'use_auto_group_naming' => true,                                   // default to true
+    'use_util_menu'         => true,                                   // default to true, shows utility menu
+    'minimum_role'          => 'edit_theme_options',                   // default to 'edit_theme_options'
+    'layout'                => 'fixed',                                // fluid or fixed, default to fixed
+    'page_title'            => __( 'Настройки темы', 'vp_textdomain' ), // page title
+    'menu_label'            => __( 'Настройки темы', 'vp_textdomain' ), // menu label
+));
+
+function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+

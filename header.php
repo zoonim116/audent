@@ -15,7 +15,7 @@
             <div class="brand-wrap">
                 <div class="row">
                     <div class="adress">
-                        <p><?= get_option('audent_settings')['audent_text_field_0']; ?></p>
+                        <p><?= favpress_option('audent_option.address'); ?></p>
                     </div>
                     <div class="logo">
                         <?php
@@ -25,8 +25,8 @@
                         <a href="<?php echo home_url('/'); ?>"><img src="<?php echo $logo[0] ; ?>" alt="<?php echo bloginfo('name') ; ?>"></a>
                     </div>
                     <div class="phone">
-                        <a href="tel:+38<?= get_option('audent_settings')['audent_text_field_1']; ?>" class="phone-kievstar"><?= get_option('audent_settings')['audent_text_field_1']; ?></a>
-                        <a href="tel:+38<?= get_option('audent_settings')['audent_text_field_2']; ?>" class="phone-life"> <?= get_option('audent_settings')['audent_text_field_2']; ?></a>
+                        <a href="tel:+38<?= favpress_option('audent_option.phone_1'); ?>" class="phone-kievstar"><?= favpress_option('audent_option.phone_1'); ?></a>
+                        <a href="tel:+38<?= favpress_option('audent_option.phone_2'); ?>" class="phone-life"> <?= favpress_option('audent_option.phone_2'); ?></a>
                     </div>
                 </div>
             </div>
@@ -34,45 +34,24 @@
     </div>
     <nav>
         <div class="container">
-            <ul>
-                <li><a href="#" class="active">Главная</a></li>
-                <li><a href="#">Услуги</a>
-                    <ul class="drop-menu">
-                        <li><a href="">Терапия</a></li>
-                        <li><a href="">Профилактика</a></li>
-                        <li><a href="">Эстетическая стоматология</a></li>
-                        <li><a href="">Хирургия</a></li>
-                        <li><a href="">Имплантация</a></li>
-                        <li><a href="">Пародонтология</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
+            <?php
+            wp_nav_menu( array(
+                    'menu'              => 'header-menu',
+                    'theme_location'    => 'header-menu')
+            );
+            ?>
+
         </div>
     </nav>
     <div class="title-wrap">
         <div class="container">
-            <h1 class="title-wrap__h1">Позаботьтесь о здоровье своих зубов сегодня</h1>
-            <h2 class="title-wrap__h2">Ваша улыбка - ваша уверенность в себе</h2>
+            <h1 class="title-wrap__h1"><?= favpress_option('audent_option.homepage_title'); ?></h1>
+            <h2 class="title-wrap__h2"><?= favpress_option('audent_option.homepage_subtitle'); ?></h2>
         </div>
     </div>
     <div class="form-wrap">
         <div class="container">
-            <form class="form-inline row">
-                <div class="form-group col-sm-3">
-                    <input type="text" class="form-control" id="name" placeholder="Ваше имя">
-                </div>
-                <div class="form-group col-sm-3">
-                    <input name="phone" class="form-control" type="tel" id="phone" tabindex="0" required="" pattern="^[ 0-9]+$" aria-required="true" placeholder="Номер телефона">
-                </div>
-                <div class="form-group col-sm-3">
-                    <input type='text' class="form-control" placeholder="Желаемая дата" id='datetimepicker4' />
-                </div>
-                <div class="form-group col-sm-3">
-                    <button type="submit" class="btn btn-primary">Записаться на прием</button>
-                </div>
-            </form>
+           <?= do_shortcode('[contact-form-7 id="47" title="Контактная форма 1" html_class="form-inline row"]'); ?>
         </div>
     </div>
 </header>
