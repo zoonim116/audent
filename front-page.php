@@ -40,11 +40,16 @@
 <section class="form-wrap">
     <div class="container">
         <div class="form-content">
-            <p>Не откладывайте визит к стоматологу на потом</p>
-            <p>Сделайте свою улыбку сдоровее вместе с нами</p>
+            <p><?=  favpress_option('audent_option.homepage_form_title');  ?></p>
+            <p><?=  favpress_option('audent_option.homepage_form_subtitle');  ?></p>
         </div>
         <?= do_shortcode('[contact-form-7 id="47" title="Контактная форма 1" html_class="form-inline row"]'); ?>
     </div>
 </section>
-
+<section class="map">
+    <p class="title-block"><?=  favpress_option('audent_option.gmaps_title');  ?></p>
+    <div class="map-wrap">
+        <?=  favpress_option('audent_option.gmaps_iframe_source');  ?>
+    </div>
+</section>
 <?php get_footer(); ?>

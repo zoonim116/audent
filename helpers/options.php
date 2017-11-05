@@ -40,6 +40,26 @@ return [
                             'default' => '(067) 567-89-00',
                         ]
                     ]
+                ],
+                [
+                    'type' => 'section',
+                    'title' => __('Google maps', 'audent'),
+                    'name' => 'section_2',
+                    'description' => __('', 'audent'),
+                    'fields' => [
+                        [
+                            'type' => 'textbox',
+                            'name' => 'gmaps_title',
+                            'label' => __('Заголовок для карты', 'audent'),
+                            'default' => '',
+                        ],
+                        [
+                            'type' => 'textarea',
+                            'name' => 'gmaps_iframe_source',
+                            'label' => __('Исходный код карты', 'audent'),
+                            'default' => '',
+                        ]
+                    ]
                 ]
             ]
         ],
@@ -64,6 +84,16 @@ return [
                             'type' => 'textbox',
                             'name' => 'homepage_subtitle',
                             'label' => __('Подзаголовок', 'audent'),
+                        ],
+                        [
+                            'type' => 'textbox',
+                            'name' => 'homepage_form_title',
+                            'label' => __('Заголовок для формы', 'audent'),
+                        ],
+                        [
+                            'type' => 'textbox',
+                            'name' => 'homepage_form_subtitle',
+                            'label' => __('Подзаголовок для формы', 'audent'),
                         ],
                         [
                             'type' => 'wpeditor',
