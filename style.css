@@ -5,3 +5,8 @@ Author URI: http://42studio.org.ua/
 Version: 1.0
 Text Domain: audent
 */
+
+.flex-control-nav {
+    bottom: 10px !important;
+    z-index: 99 !important;
+}

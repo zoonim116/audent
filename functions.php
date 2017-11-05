@@ -1,6 +1,8 @@
 <?php
 require_once  get_template_directory() . '/helpers/helper.php';
 require_once  get_template_directory() . '/cpt/services.php';
+require_once  get_template_directory() . '/cpt/team.php';
+require_once  get_template_directory() . '/cpt/why.php';
 require_once ABSPATH  . 'wp-content/plugins/favpress/favpress-framework/bootstrap.php';
 
 /************************ Setup theme **********************************************/
@@ -24,6 +26,7 @@ function wpdocs_theme_name_scripts() {
     wp_enqueue_script( 'bootstrap-datepicker', get_template_directory_uri() . '/js/bootstrap-datepicker.min.js', array(), '1.0.6', true );
     wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.7', true );
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'flexslider',  'https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider-min.js', array(), '1.0.0', true );
     wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
     wp_register_script( 'loadmore', get_template_directory_uri() . '/js/loadmore.js', array(), '1.0.0', true );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
@@ -33,6 +36,7 @@ function wpdocs_theme_name_scripts() {
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
     wp_enqueue_style( 'datepicker3', get_template_directory_uri() . '/css/bootstrap-datepicker3.min.css');
     wp_enqueue_style( 'style', get_template_directory_uri() . '/css/main.css');
+    wp_enqueue_style( 'override_style', get_template_directory_uri() . '/style.css');
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 

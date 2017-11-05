@@ -65,6 +65,27 @@ return [
                             'name' => 'homepage_subtitle',
                             'label' => __('Подзаголовок', 'audent'),
                         ],
+                        [
+                            'type' => 'wpeditor',
+                            'name' => 'homepage_about_ud',
+                            'label' => __('О нас', 'audent'),
+//                            'use_external_plugins' => '1',
+                            'disabled_externals_plugins' => '',
+                            'disabled_internals_plugins' => '',
+                        ],
+                        [
+                            'type' => 'Select',
+                            'name' => 'about_us_page',
+                            'label' => __('Страница о нас', 'audent'),
+                            'items' => [
+                                'data' => [
+                                    [
+                                        'source' => 'function',
+                                        'value' => 'favpress_get_pages'
+                                    ]
+                                ]
+                            ]
+                        ]
                     ]
                 ]
             ]

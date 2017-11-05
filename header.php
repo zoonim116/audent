@@ -18,11 +18,11 @@
                         <p><?= favpress_option('audent_option.address'); ?></p>
                     </div>
                     <div class="logo">
-                        <?php
+                        <?
                         $custom_logo_id = get_theme_mod( 'custom_logo' );
                         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                         ?>
-                        <a href="<?php echo home_url('/'); ?>"><img src="<?php echo $logo[0] ; ?>" alt="<?php echo bloginfo('name') ; ?>"></a>
+                        <a href="<?= home_url('/'); ?>"><img src="<?= $logo[0] ; ?>" alt="<?= bloginfo('name') ; ?>"></a>
                     </div>
                     <div class="phone">
                         <a href="tel:+38<?= favpress_option('audent_option.phone_1'); ?>" class="phone-kievstar"><?= favpress_option('audent_option.phone_1'); ?></a>
@@ -34,7 +34,7 @@
     </div>
     <nav>
         <div class="container">
-            <?php
+            <?
             wp_nav_menu( array(
                     'menu'              => 'header-menu',
                     'theme_location'    => 'header-menu')

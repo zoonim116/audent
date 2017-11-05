@@ -5,8 +5,8 @@ function create_service_post_type() {
         // CPT Options
         array(
             'labels' => array(
-                'name' => __( 'Услуги', 'platforma' ),
-                'singular_name' => __( 'Услуга', 'platforma' )
+                'name' => __( 'Услуги', 'audent' ),
+                'singular_name' => __( 'Услуга', 'audent' )
             ),
             'public' => true,
             'has_archive' => true,
@@ -21,7 +21,7 @@ function create_service_post_type() {
         'services',
         // Taxonomy Options
         array(
-            'label' => __('Категории', 'platforma'),
+            'label' => __('Категории', 'audent'),
             'rewrite' => array('slug' => 'service_categories'),
             'hierarchical' => true,
             'query_var' => true,
