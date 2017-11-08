@@ -30,14 +30,26 @@ return [
                         [
                             'type' => 'textbox',
                             'name' => 'phone_1',
-                            'label' => __('Номер телефона', 'audent'),
+                            'label' => __('Номер телефона (Киевстар)', 'audent'),
                             'default' => '(067) 567-89-00',
                         ],
                         [
                             'type' => 'textbox',
                             'name' => 'phone_2',
-                            'label' => __('Номер телефона', 'audent'),
+                            'label' => __('Номер телефона (Lifecell) ', 'audent'),
                             'default' => '(067) 567-89-00',
+                        ],
+                        [
+                            'type' => 'textbox',
+                            'name' => 'phone_3',
+                            'label' => __('Номер телефона (Vodafone) ', 'audent'),
+                            'default' => '(095) 123-45-67',
+                        ],
+                        [
+                            'type' => 'textbox',
+                            'name' => 'phone_4',
+                            'label' => __('Номер телефона (Городской номер) ', 'audent'),
+                            'default' => '(056) 123-45-67',
                         ]
                     ]
                 ],

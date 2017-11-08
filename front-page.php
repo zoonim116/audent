@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<? get_header(); ?>
 
 <section class="job-wrap">
     <div class="container">
@@ -22,7 +22,7 @@
         <div class="about-us-team">
             <p class="title-block"><?=  __('Наши специалисты', 'audent'); ?></p>
             <div class="row">
-                    <? echo do_action('show-team-on-homepage'); ?>
+                    <?= do_action('show-team-on-homepage'); ?>
             </div>
             <a href="<? the_permalink(favpress_option('audent_option.about_us_page')) ?>" class="btn btn-primary">Подробнее о клинике</a>
         </div>
@@ -46,10 +46,5 @@
         <?= do_shortcode('[contact-form-7 id="47" title="Контактная форма 1" html_class="form-inline row"]'); ?>
     </div>
 </section>
-<section class="map">
-    <p class="title-block"><?=  favpress_option('audent_option.gmaps_title');  ?></p>
-    <div class="map-wrap">
-        <?=  favpress_option('audent_option.gmaps_iframe_source');  ?>
-    </div>
-</section>
-<?php get_footer(); ?>
+<? get_sidebar( 'map' ); ?>
+<? get_footer(); ?>

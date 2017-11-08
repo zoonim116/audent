@@ -1,4 +1,4 @@
-<?php
+<?
 function create_why_us_post_type() {
     register_post_type( 'why',
         // CPT Options

@@ -1,5 +1,4 @@
-<?php
-
+<?
 function create_service_post_type() {
     register_post_type( 'services',
         // CPT Options
@@ -9,8 +8,8 @@ function create_service_post_type() {
                 'singular_name' => __( 'Услуга', 'audent' )
             ),
             'public' => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'services'),
+            'has_archive' => false,
+            // 'rewrite' => array('slug' => 'services'),
             'query_var' => true,
             'supports' => array('title', 'editor', 'thumbnail'),
             'menu_icon' => 'dashicons-schedule',
@@ -29,6 +28,7 @@ function create_service_post_type() {
             'has_archive' => true,
         )
     );
+    flush_rewrite_rules();
 }
 add_action( 'init', 'create_service_post_type' );
 
@@ -67,3 +67,12 @@ function get_list_of_services() {
 }
 
 add_action('get-list-of-services', 'get_list_of_services', 10);
+
+function show_service_category() {
+    global $post;
+    if($category = wp_get_post_terms($post->ID, 'service_categories')) {
+          Helper::hm_get_template_part('template-parts/service-category', ['category' => $category[0]]);
+    }
+}
+
+add_action('show-service-category', 'show_service_category', 10);

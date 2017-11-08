@@ -6,7 +6,192 @@ Version: 1.0
 Text Domain: audent
 */
 
-.flex-control-nav {
-    bottom: 10px !important;
-    z-index: 99 !important;
+.menu-item {display: block;position: relative;float: left;}
+.menu-item:hover > ul {
+	display: block;
+    position: absolute;
+    z-index: 9;
+    border-bottom: 1px solid #33aeda;
+    border-top: 1px solid #33aeda;
+        min-width: 220px;
+}
+
+.sub-menu {display: none;}
+.sub-menu li {
+	background-color: #fffffe;
+    line-height: 30px;
+    border-left: #33aeda 1px solid;
+    border-right: #33aeda 1px solid;
+    width: 100%;
+}
+
+nav ul {
+    padding: 0px;
+    text-align: center;
+    margin-bottom: 0px;
+    margin: auto;
+    width: fit-content;
+}
+
+.sub-menu li a{    
+    color: #000000;
+    text-transform: uppercase;
+    padding: 7px 0px;
+    text-align: left;
+    line-height: normal;
+}
+
+ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
+ul ul ul{left: 100%;top: 0;margin-left:1px;}
+.menu-item li:hover {background-color: #F0F0F0;}
+.expand{font-size:12px;float:right;margin-right:5px;}
+
+.navbar.bg-light {
+	background: transparent !important;
+}
+
+.navbar {
+	padding: 0px;
+}
+
+ nav .sub-menu a:before {
+    background: #33aedb;
+}
+
+.footer .menu-item:hover > ul {
+	    bottom: 54px;
+}
+
+.menu-xider-menyu-container {
+	width: 100%;
+}
+
+.carousel .flex-control-nav {
+	bottom: 20px;
+	z-index: 2;
+}
+
+.carousel .flex-control-paging li a.flex-active {
+	background: #FFF;
+}
+
+.carousel .flex-control-paging li a {
+	width: 15px;
+	height: 15px;
+	background: rgba(8, 8, 8, 0.16);
+    box-shadow: none;
+}
+
+.form-group {
+	position: relative;
+}
+
+
+
+span.wpcf7-not-valid-tip {
+	position: absolute;
+	font-size: 12px;
+    text-transform: none;
+    color: #ffd912;
+}
+
+.wpcf7-form-control-wrap {
+	display: block;
+}
+
+div.wpcf7-validation-errors {
+	width: 100%;
+}
+
+div.wpcf7 .ajax-loader {
+	position: absolute;
+}
+
+@media (max-width: 991px) {
+
+	.form-inline .form-group {
+	margin-bottom: 20px;
+}
+
+	.footer nav {
+		display: none;
+	}
+	nav {
+	    background: rgba(255, 255, 255, 0.95);
+	    text-transform: uppercase;
+	    font-size: 14px;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    z-index: 9;
+
+	}
+
+	nav a {
+	    color: #222;
+	    display: block;
+	    position: relative;
+	    padding: 17px 0px;
+	    margin: 0px 22px;
+	}
+
+	.menu-item {
+		float: none;
+	}
+
+	.navbar {
+		display: block;
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+	}
+
+	nav a:hover {
+    	color: #747475;
+	    font-weight: 500;
+	}
+
+	.menu-item:hover > ul {
+	    position: relative;
+	    left: 0;
+	    border-top: 1px solid #fff;
+	    border-bottom: 1px solid #fff;
+    	background: rgba(204, 204, 204, 0.38);
+	}
+
+	nav a:before {
+		display: none;
+	}
+
+	.sub-menu li {
+		border: 0;
+    	background: transparent;
+	}
+
+	.menu-xider-menyu-container {
+		display: none;
+	}
+
+	.menu-xider-menyu-container.show {
+		display: block;
+		    position: relative;
+	}
+
+	header {
+		padding-top: 60px;
+	}
+
+	.footer {
+		    border-top: 4px solid #3497db;
+	}
+}
+
+@media (max-width: 767px) {
+	.form-inline .form-group {
+	margin-bottom: 0px;
+}
+
+span.wpcf7-not-valid-tip {
+	position: relative;
+}
+
 }

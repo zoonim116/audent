@@ -1,4 +1,4 @@
-<?php
+<?
 function create_team_post_type() {
     register_post_type( 'team',
         // CPT Options
@@ -37,3 +37,18 @@ function show_team_on_homepage() {
 }
 
 add_action('show-team-on-homepage', 'show_team_on_homepage', 10);
+
+function show_team() {
+  $the_query = new WP_Query(array(
+      'post_type' => 'team',
+      'posts_per_page' => -1,
+  ));
+  if ($the_query->have_posts()) {
+      while ($the_query->have_posts()) {
+          $the_query->the_post();
+          get_template_part('template-parts/team-item');
+      }
+  }
+}
+
+add_action('show-team', 'show_team', 10);
